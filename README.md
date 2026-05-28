@@ -37,7 +37,9 @@ A modern, production-ready business website for Bendora Technology, built with F
 
 ---
 
-## 📁 Project Structure
+## Project Structure
+
+```
 bendora-website/
 │
 ├── 📄 app.py                    # Application entry point, routes & error handlers
@@ -56,15 +58,15 @@ bendora-website/
 │       └── 📄 profile.jpeg      # Developer profile photo
 │
 └── 📁 templates/                # Jinja2 HTML templates rendered by Flask
-├── 📄 base.html             # Master layout — navbar, footer, meta tags
-├── 📄 index.html            # Homepage — hero, services, projects, stats
-├── 📄 about.html            # About — story, skills, timeline, interests
-├── 📄 services.html         # Services — detailed breakdown of all offerings
-├── 📄 portfolio.html        # Portfolio — filterable project showcase
-├── 📄 contact.html          # Contact — Formspree form and contact details
-├── 📄 privacy.html          # Privacy Policy — legal data usage information
-├── 📄 404.html              # 404 error — page not found handler
-└── 📄 500.html              # 500 error — internal server error handler
+    ├── 📄 base.html             # Master layout — navbar, footer, meta tags
+    ├── 📄 index.html            # Homepage — hero, services, projects, stats
+    ├── 📄 about.html            # About — story, skills, timeline, interests
+    ├── 📄 services.html         # Services — detailed breakdown of all offerings
+    ├── 📄 portfolio.html        # Portfolio — filterable project showcase
+    ├── 📄 contact.html          # Contact — Formspree form and contact details
+    ├── 📄 privacy.html          # Privacy Policy — legal data usage information
+    ├── 📄 404.html              # 404 error — page not found handler
+    └── 📄 500.html              # 500 error — internal server error handler
 
 ---
 
