@@ -2,32 +2,42 @@
 
 A modern, production-ready business website for Bendora Technology, built with Flask and deployed on Render. The site showcases services, projects, and provides a direct contact channel for potential clients.
 
-## Live Website
+---
 
-https://bendoratechnology.onrender.com
+## 🌐 Live Website
 
-## Tech Stack
+**https://bendoratechnology.onrender.com**
 
-- **Backend:** Python, Flask
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Fonts:** Syne, DM Sans (Google Fonts)
-- **Icons:** Font Awesome 6
-- **Form Handling:** Formspree
-- **Hosting:** Render
-- **Version Control:** Git & GitHub
+---
 
-## Pages
+## 🛠️ Tech Stack
 
-- **Home** — Hero section, services overview, featured projects, stats, and CTA
-- **About** — Story, tech stack, experience timeline, and personal interests
-- **Services** — Detailed breakdown of Web Development, Software Solutions, Cloud Services, and UI/UX Design
-- **Portfolio** — Filterable project showcase with tech stack tags
-- **Contact** — Contact form powered by Formspree, contact details and social links
-- **Privacy Policy** — Full privacy policy for the business
+| Layer | Technology |
+|-------|-----------|
+| Backend | Python, Flask |
+| Frontend | HTML5, CSS3, JavaScript |
+| Fonts | Syne, DM Sans (Google Fonts) |
+| Icons | Font Awesome 6 |
+| Form Handling | Formspree |
+| Hosting | Render |
+| Version Control | Git & GitHub |
 
-## Project Structure
+---
 
-```
+## 📄 Pages
+
+| Page | Description |
+|------|-------------|
+| **Home** | Hero section, services overview, featured projects, stats, and CTA |
+| **About** | Story, tech stack, experience timeline, and personal interests |
+| **Services** | Detailed breakdown of Web Development, Software Solutions, Cloud Services, and UI/UX Design |
+| **Portfolio** | Filterable project showcase with tech stack tags |
+| **Contact** | Contact form powered by Formspree, contact details and social links |
+| **Privacy Policy** | Full privacy policy for the business |
+
+---
+
+## 📁 Project Structure
 bendora-website/
 │
 ├── 📄 app.py                    # Application entry point, routes & error handlers
@@ -46,18 +56,19 @@ bendora-website/
 │       └── 📄 profile.jpeg      # Developer profile photo
 │
 └── 📁 templates/                # Jinja2 HTML templates rendered by Flask
-    ├── 📄 base.html             # Master layout — navbar, footer, meta tags
-    ├── 📄 index.html            # Homepage — hero, services, projects, stats
-    ├── 📄 about.html            # About — story, skills, timeline, interests
-    ├── 📄 services.html         # Services — detailed breakdown of all offerings
-    ├── 📄 portfolio.html        # Portfolio — filterable project showcase
-    ├── 📄 contact.html          # Contact — Formspree form and contact details
-    ├── 📄 privacy.html          # Privacy Policy — legal data usage information
-    ├── 📄 404.html              # 404 error — page not found handler
-    └── 📄 500.html              # 500 error — internal server error handler
+├── 📄 base.html             # Master layout — navbar, footer, meta tags
+├── 📄 index.html            # Homepage — hero, services, projects, stats
+├── 📄 about.html            # About — story, skills, timeline, interests
+├── 📄 services.html         # Services — detailed breakdown of all offerings
+├── 📄 portfolio.html        # Portfolio — filterable project showcase
+├── 📄 contact.html          # Contact — Formspree form and contact details
+├── 📄 privacy.html          # Privacy Policy — legal data usage information
+├── 📄 404.html              # 404 error — page not found handler
+└── 📄 500.html              # 500 error — internal server error handler
 
+---
 
-```## Local Development
+## 🚀 Local Development
 
 **1. Clone the repository**
 ```bash
@@ -92,7 +103,9 @@ python app.py
 
 Visit `http://127.0.0.1:5000` in your browser.
 
-## Deployment on Render
+---
+
+## ☁️ Deployment on Render
 
 1. Push your code to GitHub
 2. Go to [render.com](https://render.com) and create a new **Web Service**
@@ -104,7 +117,9 @@ Visit `http://127.0.0.1:5000` in your browser.
    - `SECRET_KEY` — set to a long random string
 6. Click **Deploy** — your site will be live in minutes
 
-## Contact Form Setup
+---
+
+## 📬 Contact Form Setup
 
 The contact form uses [Formspree](https://formspree.io). To set it up:
 
@@ -115,20 +130,29 @@ The contact form uses [Formspree](https://formspree.io). To set it up:
 action="https://formspree.io/f/YOUR_FORM_ID"
 ```
 
-## Environment Variables
+---
+
+## 🔐 Environment Variables
 
 | Variable | Description |
 |----------|-------------|
 | `SECRET_KEY` | Flask secret key for session security |
 | `FLASK_DEBUG` | Set to `true` for development, `false` for production |
 
-## License
+---
 
-© 2024 Bendora Technology. All rights reserved.
+## 📜 License
 
-## Contact
+© 2024 Bendora Technology. All rights reserved.  
+Unauthorized use, reproduction, or distribution of any content or code from this repository is strictly prohibited.
 
-**Email:** bendoratechnology@gmail.com  
-**LinkedIn:** https://www.linkedin.com/in/princeton-r-zahnmie-601a8a211  
-**GitHub:** https://github.com/raccazahn  
-**Website:** https://bendoratechnology.onrender.com
+---
+
+## 📞 Contact
+
+| Channel | Details |
+|---------|---------|
+| **Email** | bendoratechnology@gmail.com |
+| **LinkedIn** | https://www.linkedin.com/in/princeton-r-zahnmie-601a8a211 |
+| **GitHub** | https://github.com/raccazahn |
+| **Website** | https://bendoratechnology.onrender.com |
