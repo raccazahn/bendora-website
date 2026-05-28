@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% block title %}Services — Bendora Technology{% endblock %}
+
+{% block content %}
+
+<!-- ════════════════════════ PAGE HERO ═══════════════════════════ -->
+<section class="page-hero" aria-label="Page header">
+  <div class="container">
+    <p class="section-label">What We Offer</p>
+    <h1 class="hero-title">
+      Our <span class="gradient-text">Services</span>
+    </h1>
+    <p class="section-sub" style="margin-top:1rem;">
+      End-to-end digital solutions built with precision, performance, and purpose.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════ WEB DEVELOPMENT ═════════════════════ -->
+<section id="web-development" aria-labelledby="web-heading">
+  <div class="container">
+    <div class="grid-2" style="gap:4rem;">
+      <div>
+        <p class="section-label">Service 01</p>
+        <h2 class="section-title reveal" id="web-heading">
+          Web <span class="gradient-text">Development</span>
+        </h2>
+        <p class="reveal reveal-delay-1" style="color:var(--muted);margin-bottom:1rem;">
+          We build fast, modern, and fully responsive web applications from the ground up.
+          Whether you need a landing page, a full e-commerce platform, or a complex web app,
+          we deliver clean code and exceptional user experiences.
+        </p>
+        <p class="reveal reveal-delay-2" style="color:var(--muted);margin-bottom:2rem;">
+          Every project is built with performance, accessibility, and scalability in mind —
+          so your website grows with your business.
+        </p>
+        <div class="tags reveal reveal-delay-3">
+          {% for t in ['Flask','React','Next.js','HTML5','CSS3','JavaScript','PostgreSQL'] %}
+          <span class="tag">{{ t }}</span>
+          {% endfor %}
+        </div>
+        <div style="margin-top:2rem;" class="reveal reveal-delay-3">
+          <a href="{{ url_for('contact') }}" class="btn btn-primary">
+            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Get a Quote
+          </a>
+        </div>
+      </div>
+      <div class="glass-card reveal" style="display:flex;flex-direction:column;gap:1.25rem;">
+        {% for item in [
+          ('fa-display',       'Responsive Design',    'Looks great on every screen size from mobile to desktop.'),
+          ('fa-bolt',          'High Performance',     'Optimised for speed with fast load times and clean code.'),
+          ('fa-shield-halved', 'Secure & Reliable',    'Built with security best practices from the start.'),
+          ('fa-magnifying-glass','SEO Friendly',       'Structured for search engines to find and rank your site.'),
+        ] %}
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div class="service-icon" style="margin-bottom:0;flex-shrink:0;">
+            <i class="fa-solid {{ item[0] }}" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h4 style="font-size:0.95rem;margin-bottom:0.25rem;">{{ item[1] }}</h4>
+            <p style="font-size:0.88rem;color:var(--muted);">{{ item[2] }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ SOFTWARE SOLUTIONS ══════════════════ -->
+<section id="software-solutions" style="background:var(--navy-mid);" aria-labelledby="software-heading">
+  <div class="container">
+    <div class="grid-2" style="gap:4rem;">
+      <div class="glass-card reveal" style="display:flex;flex-direction:column;gap:1.25rem;">
+        {% for item in [
+          ('fa-gears',         'Custom APIs',          'RESTful and GraphQL APIs built to your exact specifications.'),
+          ('fa-robot',         'Automation Tools',     'Save time and reduce errors with smart workflow automation.'),
+          ('fa-database',      'Database Design',      'Efficient, scalable database architecture for any project size.'),
+          ('fa-code-branch',   'System Integration',   'Connect your tools and platforms into one seamless workflow.'),
+        ] %}
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div class="service-icon" style="margin-bottom:0;flex-shrink:0;">
+            <i class="fa-solid {{ item[0] }}" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h4 style="font-size:0.95rem;margin-bottom:0.25rem;">{{ item[1] }}</h4>
+            <p style="font-size:0.88rem;color:var(--muted);">{{ item[2] }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div>
+        <p class="section-label">Service 02</p>
+        <h2 class="section-title reveal" id="software-heading">
+          Software <span class="gradient-text">Solutions</span>
+        </h2>
+        <p class="reveal reveal-delay-1" style="color:var(--muted);margin-bottom:1rem;">
+          From custom APIs to full backend systems, we build software that solves real
+          business problems. Our solutions are scalable, maintainable, and built to last.
+        </p>
+        <p class="reveal reveal-delay-2" style="color:var(--muted);margin-bottom:2rem;">
+          We work closely with you to understand your workflow and deliver software that
+          fits perfectly into your business operations.
+        </p>
+        <div class="tags reveal reveal-delay-3">
+          {% for t in ['Python','FastAPI','Flask','SQLAlchemy','Celery','Redis','Docker'] %}
+          <span class="tag">{{ t }}</span>
+          {% endfor %}
+        </div>
+        <div style="margin-top:2rem;" class="reveal reveal-delay-3">
+          <a href="{{ url_for('contact') }}" class="btn btn-primary">
+            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Get a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ CLOUD SERVICES ══════════════════════ -->
+<section id="cloud-services" aria-labelledby="cloud-heading">
+  <div class="container">
+    <div class="grid-2" style="gap:4rem;">
+      <div>
+        <p class="section-label">Service 03</p>
+        <h2 class="section-title reveal" id="cloud-heading">
+          Cloud <span class="gradient-text">Services</span>
+        </h2>
+        <p class="reveal reveal-delay-1" style="color:var(--muted);margin-bottom:1rem;">
+          We deploy, manage, and scale your applications on the cloud. From initial setup
+          to ongoing maintenance, we handle all the infrastructure so you can focus on
+          your business.
+        </p>
+        <p class="reveal reveal-delay-2" style="color:var(--muted);margin-bottom:2rem;">
+          Our cloud solutions are built for reliability, security, and cost efficiency —
+          giving you enterprise-grade infrastructure at the right price.
+        </p>
+        <div class="tags reveal reveal-delay-3">
+          {% for t in ['AWS','GCP','Docker','Nginx','GitHub Actions','Terraform','Linux'] %}
+          <span class="tag">{{ t }}</span>
+          {% endfor %}
+        </div>
+        <div style="margin-top:2rem;" class="reveal reveal-delay-3">
+          <a href="{{ url_for('contact') }}" class="btn btn-primary">
+            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Get a Quote
+          </a>
+        </div>
+      </div>
+      <div class="glass-card reveal" style="display:flex;flex-direction:column;gap:1.25rem;">
+        {% for item in [
+          ('fa-cloud-arrow-up','Cloud Deployment',    'Get your app live on AWS or GCP with zero downtime deployments.'),
+          ('fa-arrows-rotate', 'CI/CD Pipelines',     'Automated testing and deployment so every update ships smoothly.'),
+          ('fa-chart-line',    'Monitoring & Scaling', 'Real-time monitoring and auto-scaling to handle any traffic spike.'),
+          ('fa-lock',          'Security & Backups',   'Regular backups, SSL, and security hardening for peace of mind.'),
+        ] %}
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div class="service-icon" style="margin-bottom:0;flex-shrink:0;">
+            <i class="fa-solid {{ item[0] }}" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h4 style="font-size:0.95rem;margin-bottom:0.25rem;">{{ item[1] }}</h4>
+            <p style="font-size:0.88rem;color:var(--muted);">{{ item[2] }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ UI/UX DESIGN ════════════════════════ -->
+<section id="uiux-design" style="background:var(--navy-mid);" aria-labelledby="design-heading">
+  <div class="container">
+    <div class="grid-2" style="gap:4rem;">
+      <div class="glass-card reveal" style="display:flex;flex-direction:column;gap:1.25rem;">
+        {% for item in [
+          ('fa-pen-ruler',     'UI Design',            'Beautiful, modern interfaces that reflect your brand identity.'),
+          ('fa-arrows-to-dot', 'UX Research',          'User-centered design decisions backed by research and testing.'),
+          ('fa-mobile-screen', 'Mobile First',         'Designed for mobile from the start, perfect on every device.'),
+          ('fa-universal-access','Accessibility',      'Inclusive design that works for every user regardless of ability.'),
+        ] %}
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <div class="service-icon" style="margin-bottom:0;flex-shrink:0;">
+            <i class="fa-solid {{ item[0] }}" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h4 style="font-size:0.95rem;margin-bottom:0.25rem;">{{ item[1] }}</h4>
+            <p style="font-size:0.88rem;color:var(--muted);">{{ item[2] }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div>
+        <p class="section-label">Service 04</p>
+        <h2 class="section-title reveal" id="design-heading">
+          UI/UX <span class="gradient-text">Design</span>
+        </h2>
+        <p class="reveal reveal-delay-1" style="color:var(--muted);margin-bottom:1rem;">
+          Great software needs great design. We create interfaces that are not only
+          beautiful but intuitive and easy to use — turning visitors into customers
+          and users into fans.
+        </p>
+        <p class="reveal reveal-delay-2" style="color:var(--muted);margin-bottom:2rem;">
+          Every design decision is made with your users in mind, ensuring a seamless
+          experience from first click to final action.
+        </p>
+        <div class="tags reveal reveal-delay-3">
+          {% for t in ['Figma','Tailwind CSS','CSS3','Responsive','Accessibility','Wireframing'] %}
+          <span class="tag">{{ t }}</span>
+          {% endfor %}
+        </div>
+        <div style="margin-top:2rem;" class="reveal reveal-delay-3">
+          <a href="{{ url_for('contact') }}" class="btn btn-primary">
+            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Get a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ CTA BAND ════════════════════════════ -->
+<section class="cta-band" aria-label="Call to action">
+  <div class="container">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Tell us what you need and we will build it for you.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="{{ url_for('contact') }}" class="btn btn-outline">
+        <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Contact Us
+      </a>
+      <a href="{{ url_for('portfolio') }}" class="btn btn-outline">
+        <i class="fa-solid fa-grid-2" aria-hidden="true"></i> See Our Work
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

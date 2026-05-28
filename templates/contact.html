@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block title %}Contact — Bendora Technology{% endblock %}
+
+{% block content %}
+
+<!-- ════════════════════════ PAGE HERO ═══════════════════════════ -->
+<section class="page-hero" aria-label="Page header">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h1 class="hero-title">
+      Let's <span class="gradient-text">Work Together</span>
+    </h1>
+    <p class="section-sub" style="margin-top:1rem;">
+      Have a project idea, a question, or just want to say hi?
+      I'd love to hear from you.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════ CONTACT SECTION ═════════════════════ -->
+<section aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- ── Info Panel ─────────────────────────────────────────── -->
+      <div>
+        <h2 class="section-title reveal" id="contact-heading" style="font-size:1.6rem;margin-bottom:2rem;">
+          Get in <span class="gradient-text">Touch</span>
+        </h2>
+
+        <div class="contact-info-item reveal">
+          <div class="contact-icon" aria-hidden="true"><i class="fa-regular fa-envelope"></i></div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:bendoratechnology@gmail.com">bendoratechnology@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item reveal reveal-delay-1">
+          <div class="contact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h4>Location</h4>
+            <p>24<sup>th</sup> Street, Sinkor, Monrovia Liberia</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item reveal reveal-delay-2">
+          <div class="contact-icon" aria-hidden="true"><i class="fa-regular fa-clock"></i></div>
+          <div>
+            <h4>Response Time</h4>
+            <p>Within 24 hours</p>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;" class="reveal reveal-delay-3">
+          <h4 style="font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;">
+            Find me on
+          </h4>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/princeton-r-zahnmie-601a8a211"  class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/raccazahn"    class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://twitter.com"   class="social-link" target="_blank" rel="noopener" aria-label="Twitter / X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Form ──────────────────────────────────────────────── -->
+      <div class="glass-card reveal" style="padding:2.5rem;">
+
+        <!-- Flask flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-msg flash-{{ category }}" role="alert">
+              <i class="fa-solid fa-{{ 'circle-check' if category=='success' else 'circle-exclamation' }}" aria-hidden="true"></i>
+              {{ message }}
+            </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <!--
+          Formspree: replace YOUR_FORM_ID with your real ID from formspree.io
+          The form posts directly to Formspree, which handles delivery.
+          Remove the Flask route POST handling if using Formspree only.
+        -->
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xdajyzkk"
+          method="POST"
+          novalidate
+          aria-label="Contact form"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name <span style="color:#f87171">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                required
+                autocomplete="name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span style="color:#f87171">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="john@example.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject <span style="color:#f87171">*</span></label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Project enquiry / General question"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span style="color:#f87171">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell me about your project or question…"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Formspree honeypot (spam protection) -->
+          <input type="text" name="_gotcha" style="display:none;" aria-hidden="true" />
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Portfolio — Bendora Technology{% endblock %}
+
+{% block content %}
+
+<!-- ════════════════════════ PAGE HERO ═══════════════════════════ -->
+<section class="page-hero" aria-label="Page header">
+  <div class="container">
+    <p class="section-label">Portfolio</p>
+    <h1 class="hero-title">
+      Projects &amp;<br>
+      <span class="gradient-text">Case Studies</span>
+    </h1>
+    <p class="section-sub" style="margin-top:1rem;">
+      A curated collection of work spanning web apps, APIs, dashboards, and more.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════ PROJECT GRID ════════════════════════ -->
+<section aria-labelledby="portfolio-heading">
+  <div class="container">
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="group" aria-label="Project category filter">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="web">Web Apps</button>
+      <button class="filter-btn" data-filter="api">APIs &amp; Backend</button>
+      <button class="filter-btn" data-filter="tool">Tools &amp; Other</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-heading">
+      {% set projects = [
+        ('🛒','web',  'E-Commerce Platform',     'Full-stack marketplace with real-time inventory, Stripe payments, and a full admin dashboard.',                  ['Flask','React','PostgreSQL','Stripe','Redis'],  '#','#'),
+        ('📊','web',  'Analytics Dashboard',     'Interactive KPI-tracking suite consuming multiple REST data sources with live chart updates.',                   ['Python','D3.js','FastAPI','Redis','Docker'],    '#','#'),
+        ('🤖','tool', 'AI Content Assistant',    'GPT-4-powered writing tool with fine-tuning support, usage limits, and a subscription billing layer.',          ['Python','OpenAI','Flask','Stripe','Celery'],    '#','#'),
+        ('🔐','api',  'Auth Microservice',       'JWT/OAuth2 authentication service with rate limiting, refresh-token rotation, and audit logging.',              ['Python','FastAPI','PostgreSQL','JWT','Docker'],  '#','#'),
+        ('📱','web',  'Fitness Tracker PWA',     'Progressive Web App for workout logging with offline support, push notifications, and social sharing.',         ['React','Flask','IndexedDB','PWA'],              '#','#'),
+        ('🌐','api',  'Multi-Tenant SaaS API',   'White-label REST API platform with per-tenant isolation, billing metering, and role-based access control.',     ['Flask','PostgreSQL','Celery','AWS','Terraform'],'#','#'),
+        ('🗺️','tool', 'Location Intelligence',  'Geo-analytics tool for visualising customer density and regional sales trends on an interactive map.',           ['Python','Leaflet.js','Flask','GeoJSON'],        '#','#'),
+        ('📩','tool', 'Email Automation Suite',  'Transactional and marketing email platform with template builder, A/B testing, and real-time open tracking.',   ['Python','Flask','SendGrid','Redis','Vue'],      '#','#'),
+        ('📦','api',  'Inventory Management API','RESTful API for multi-warehouse stock control with barcode scanning, reorder alerts, and PDF reporting.',        ['Flask','SQLAlchemy','PostgreSQL','WeasyPrint'],  '#','#'),
+      ] %}
+      {% for icon, cat, title, desc, tags, demo, repo in projects %}
+      <article class="project-card portfolio-item reveal" data-category="{{ cat }}">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" aria-hidden="true">{{ icon }}</div>
+          <span class="project-thumb-label">{{ cat|title }}</span>
+        </div>
+        <div class="project-body">
+          <h3>{{ title }}</h3>
+          <p>{{ desc }}</p>
+          <div class="tags" aria-label="Technologies used">
+            {% for t in tags %}<span class="tag">{{ t }}</span>{% endfor %}
+          </div>
+          <div class="project-links">
+            <a href="{{ demo }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
+            </a>
+            <a href="{{ repo }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ CTA ═════════════════════════════════ -->
+<section class="cta-band" aria-label="Call to action">
+  <div class="container">
+    <h2>Have a Project in Mind?</h2>
+    <p>Let's collaborate and build something exceptional together.</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-outline">
+      <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Get in Touch
+    </a>
+  </div>
+</section>
+
+{% endblock %}

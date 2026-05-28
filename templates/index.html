@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block title %}Bendora Technology — Building Digital Excellence{% endblock %}
+
+{% block content %}
+
+<!-- ════════════════════════ HERO ════════════════════════════════ -->
+<section class="hero" aria-label="Hero section">
+  <div class="hero-bg">
+    <canvas id="hero-particles" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;"></canvas>
+  </div>
+  <div class="hero-grid"></div>
+
+  <div class="container">
+    <div class="grid-2">
+      <!-- Copy -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for new projects
+        </div>
+        <h1 class="hero-title">
+          Building<br>
+          <span class="gradient-text">Digital</span><br>
+          Excellence
+        </h1>
+        <p class="hero-sub">
+          Full-stack software solutions, modern web applications, and cloud services
+          — crafted with precision and purpose.
+        </p>
+        <div class="hero-actions">
+          <a href="{{ url_for('portfolio') }}" class="btn btn-primary">
+            <i class="fa-solid fa-grid-2" aria-hidden="true"></i> View My Work
+          </a>
+          <a href="{{ url_for('contact') }}" class="btn btn-outline">
+            <i class="fa-regular fa-comments" aria-hidden="true"></i> Contact Me
+          </a>
+        </div>
+      </div>
+      <!-- Visual -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card-stack">
+          <div class="hcs-bg">
+            <div class="hcs-code">
+              <div><span class="c-blue">const</span> <span class="c-green">buildApp</span> = <span class="c-blue">async</span> () => {</div>
+              <div>&nbsp;&nbsp;<span class="c-blue">const</span> stack = [<span class="c-yellow">'Flask'</span>, <span class="c-yellow">'React'</span>];</div>
+              <div>&nbsp;&nbsp;<span class="c-blue">const</span> result = <span class="c-blue">await</span> <span class="c-green">deploy</span>({</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;quality: <span class="c-yellow">'exceptional'</span>,</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;speed: <span class="c-yellow">'blazing'</span></div>
+              <div>&nbsp;&nbsp;});</div>
+              <div>&nbsp;&nbsp;<span class="c-blue">return</span> result.<span class="c-green">success</span>; <span class="c-muted">// true ✓</span></div>
+              <div>};</div>
+            </div>
+          </div>
+          <div class="float-badge fb-1">
+            <span class="fb-icon">⚡</span>99 Performance Score
+          </div>
+          <div class="float-badge fb-2">
+            <span class="fb-icon">🚀</span>Production Ready
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ SERVICES ════════════════════════════ -->
+<section class="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <p class="section-label">What I Do</p>
+      <h2 class="section-title reveal" id="services-heading">
+        Crafting <span class="gradient-text">Full-Stack</span> Solutions
+      </h2>
+      <p class="section-sub reveal reveal-delay-1" style="margin:0 auto;">
+        From concept to deployment — delivering polished digital products that perform.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      {% set services = [
+        ('fa-code',         'Web Development',    'Modern, performant web apps built with Flask, React, and cutting-edge front-end tech.'),
+        ('fa-layer-group',  'Software Solutions', 'Scalable backend systems, APIs, and automation tools tailored to your business needs.'),
+        ('fa-cloud',        'Cloud Services',     'AWS / GCP deployment, CI/CD pipelines, and infrastructure as code for reliable scale.'),
+        ('fa-pen-ruler',    'UI/UX Design',       'Clean, accessible interfaces that convert — designed with purpose and pixel precision.'),
+      ] %}
+      {% for icon, title, desc in services %}
+      <div class="glass-card reveal reveal-delay-{{ loop.index }}">
+        <div class="service-icon">
+          <i class="fa-solid {{ icon }}" aria-hidden="true"></i>
+        </div>
+        <h3>{{ title }}</h3>
+        <p>{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ RECENT PROJECTS ═════════════════════ -->
+<section aria-labelledby="projects-heading">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <p class="section-label">Recent Work</p>
+        <h2 class="section-title reveal" id="projects-heading">
+          Featured <span class="gradient-text">Projects</span>
+        </h2>
+      </div>
+      <a href="{{ url_for('portfolio') }}" class="btn btn-outline reveal">
+        View All <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="grid-3">
+      {% set projects = [
+        ('🛒', 'Web App',  'E-Commerce Platform',   'A full-stack marketplace with real-time inventory, Stripe payments, and an admin dashboard.',  ['Flask', 'React', 'PostgreSQL', 'Stripe']),
+        ('📊', 'Dashboard','Analytics Dashboard',   'Interactive data-visualisation suite for tracking KPIs across multiple data sources.',          ['Python', 'D3.js', 'FastAPI', 'Redis']),
+        ('🤖', 'AI Tool',  'AI Content Assistant',  'GPT-powered writing assistant with custom fine-tuning, multi-language support, and an API.',    ['Python', 'OpenAI', 'Flask', 'Docker']),
+      ] %}
+      {% for icon, label, title, desc, tags in projects %}
+      <article class="project-card reveal reveal-delay-{{ loop.index }}">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" aria-hidden="true">{{ icon }}</div>
+          <span class="project-thumb-label">{{ label }}</span>
+        </div>
+        <div class="project-body">
+          <h3>{{ title }}</h3>
+          <p>{{ desc }}</p>
+          <div class="tags" aria-label="Technologies used">
+            {% for t in tags %}<span class="tag">{{ t }}</span>{% endfor %}
+          </div>
+          <div class="project-links">
+            <a href="{{ url_for('portfolio') }}" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> Details
+            </a>
+            <a href="#" class="btn btn-outline btn-sm">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ STATS ═══════════════════════════════ -->
+<section class="stats" aria-label="Statistics">
+  <div class="container">
+    <div class="grid-4">
+      {% set stats = [
+        ('50',  '+', 'Projects Completed'),
+        ('30',  '+', 'Happy Clients'),
+        ('5',   '+', 'Years Experience'),
+        ('20',  '+', 'Technologies'),
+      ] %}
+      {% for num, suf, label in stats %}
+      <div class="stat-item">
+        <div class="stat-number" data-target="{{ num }}" data-suffix="{{ suf }}">0</div>
+        <div class="stat-label">{{ label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ CTA BAND ════════════════════════════ -->
+<section class="cta-band" aria-label="Call to action">
+  <div class="container">
+    <h2>Ready to Build Something <br>Extraordinary?</h2>
+    <p>Let's turn your ideas into polished, production-ready digital products.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="{{ url_for('contact') }}" class="btn btn-outline">
+        <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Start a Project
+      </a>
+      <a href="{{ url_for('portfolio') }}" class="btn btn-outline">
+        <i class="fa-solid fa-grid-2" aria-hidden="true"></i> See My Work
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

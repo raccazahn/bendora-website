@@ -1,0 +1,220 @@
+{% extends "base.html" %} {% block title %}About — Bendora Technology{% endblock
+%} {% block content %}
+
+<!-- ════════════════════════ PAGE HERO ═══════════════════════════ -->
+<section class="page-hero" aria-label="Page header">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h1 class="hero-title">
+      The Mind Behind<br />
+      <span class="gradient-text">Bendora Technology</span>
+    </h1>
+  </div>
+</section>
+
+<!-- ════════════════════════ STORY ═══════════════════════════════ -->
+<section aria-labelledby="story-heading">
+  <div class="container">
+    <div class="grid-2" style="gap: 4rem">
+      <!-- Image -->
+      <div
+        style="
+          position: relative;
+          aspect-ratio: 4/5;
+          border-radius: 24px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: #1e293b;
+        "
+      >
+        <img
+          src="/static/images/profile.jpeg"
+          alt="Developer portrait"
+          style="width: 100%; height: 100%; object-fit: cover; display: block"
+        />
+      </div>
+      <!-- Text -->
+      <div>
+        <p class="section-label">My Story</p>
+        <h2 class="section-title reveal" id="story-heading">
+          Passionate About <span class="gradient-text">Solving Problems</span>
+        </h2>
+        <p
+          class="reveal reveal-delay-1"
+          style="color: var(--muted); margin-bottom: 1rem"
+        >
+          I'm a full-stack developer and founder of Bendora Technology with a
+          passion for building clean, efficient, and impactful software. I
+          combine deep technical knowledge with an eye for design to deliver
+          products people actually enjoy using.
+        </p>
+        <p
+          class="reveal reveal-delay-2"
+          style="color: var(--muted); margin-bottom: 2rem"
+        >
+          Over the past five years I've shipped everything from solo
+          side-projects to enterprise-grade platforms, always focusing on
+          performance, accessibility, and maintainability. I thrive at the
+          intersection of engineering and product thinking.
+        </p>
+        <div
+          style="display: flex; gap: 1rem; flex-wrap: wrap"
+          class="reveal reveal-delay-3"
+        >
+          <a href="{{ url_for('portfolio') }}" class="btn btn-primary">
+            <i class="fa-solid fa-grid-2" aria-hidden="true"></i> My Projects
+          </a>
+          <a href="{{ url_for('contact') }}" class="btn btn-outline">
+  <i class="fa-solid fa-handshake" aria-hidden="true"></i> Get a Quote
+</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ SKILLS ══════════════════════════════ -->
+<section style="background: var(--navy-mid)" aria-labelledby="skills-heading">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3.5rem">
+      <p class="section-label">Tech Stack</p>
+      <h2 class="section-title reveal" id="skills-heading">
+        Tools &amp; <span class="gradient-text">Technologies</span>
+      </h2>
+    </div>
+
+    <div class="grid-2" style="gap: 3rem; align-items: start">
+      <!-- Languages & Frameworks -->
+      <div>
+        <h3
+          style="
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+          "
+          class="reveal"
+        >
+          Languages &amp; Frameworks
+        </h3>
+        <div class="skills-grid reveal reveal-delay-1">
+          {% for skill in
+          ['Python','JavaScript','TypeScript','HTML5','CSS3','SQL','Bash'] %}
+          <span class="skill-tag">{{ skill }}</span>
+          {% endfor %}
+        </div>
+        <h3
+          style="
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 2rem 0 1.25rem;
+          "
+          class="reveal"
+        >
+          Frameworks &amp; Libraries
+        </h3>
+        <div class="skills-grid reveal reveal-delay-1">
+          {% for skill in ['Flask','FastAPI','React','Next.js','Tailwind
+          CSS','SQLAlchemy','Celery'] %}
+          <span class="skill-tag">{{ skill }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- Tools & Platforms -->
+      <div>
+        <h3
+          style="
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+          "
+          class="reveal"
+        >
+          Tools &amp; Platforms
+        </h3>
+        <div class="skills-grid reveal reveal-delay-2">
+          {% for skill in
+          ['Git','Docker','AWS','GCP','PostgreSQL','MongoDB','Redis','Linux','Nginx','GitHub
+          Actions'] %}
+          <span class="skill-tag">{{ skill }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ TIMELINE ════════════════════════════ -->
+<section aria-labelledby="timeline-heading">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3.5rem">
+      <p class="section-label">Journey</p>
+      <h2 class="section-title reveal" id="timeline-heading">
+        Education &amp; <span class="gradient-text">Experience</span>
+      </h2>
+    </div>
+    <div class="timeline" style="max-width: 640px; margin: 0 auto">
+      {% set timeline = [ ('🎓','2024 — Present','Founder, Bendora Technology',
+      'Building and delivering custom software solutions for clients across
+      multiple industries.'), ('💼','2022 — 2024', 'Senior Full-Stack
+      Developer', 'Led development of high-traffic web applications serving
+      100k+ monthly active users.'), ('🎓','2021 — 2022', 'AWS Certified
+      Developer', 'Achieved AWS Developer Associate certification with focus on
+      serverless architectures.'), ('💼','2019 — 2022', 'Junior Software
+      Engineer', 'Shipped production Flask APIs, internal tools, and
+      customer-facing dashboards.'), ('🎓','2015 — 2019', 'BSc. Computer
+      Science', 'First-class honours with specialisation in distributed systems
+      and software engineering.'), ] %} {% for icon, date, title, desc in
+      timeline %}
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true">{{ icon }}</div>
+        <div class="timeline-content">
+          <div class="timeline-date">{{ date }}</div>
+          <h4>{{ title }}</h4>
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ INTERESTS ═══════════════════════════ -->
+<section
+  style="background: var(--navy-mid)"
+  aria-labelledby="interests-heading"
+>
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3rem">
+      <p class="section-label">Beyond Code</p>
+      <h2 class="section-title reveal" id="interests-heading">
+        Personal <span class="gradient-text">Interests</span>
+      </h2>
+    </div>
+    <div class="grid-4">
+      {% set interests = [ ('🎵','Music Production','Creating beats and ambient
+      soundscapes as a creative outlet outside of coding.'), ('📚','Technical
+      Reading','Staying current with engineering blogs, papers, and the latest
+      in AI/ML.'), ('🏃','Running','Long-distance running keeps the mind sharp.
+      Currently training for a half-marathon.'), ('♟️','Chess','Strategy games
+      sharpen problem-solving skills and the love of elegant solutions.'), ] %}
+      {% for icon, title, desc in interests %}
+      <div
+        class="glass-card reveal reveal-delay-{{ loop.index }}"
+        style="text-align: center"
+      >
+        <div style="font-size: 2.5rem; margin-bottom: 1rem">{{ icon }}</div>
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem">{{ title }}</h3>
+        <p style="font-size: 0.88rem; color: var(--muted)">{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
