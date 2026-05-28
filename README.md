@@ -26,30 +26,36 @@ https://bendoratechnology.onrender.com
 - **Privacy Policy** — Full privacy policy for the business
 
 ## Project Structure
-bendora-website/
-├── app.py                  # Flask application and routes
-├── requirements.txt        # Python dependencies
-├── Procfile                # Render deployment config
-├── .env                    # Environment variables (not committed)
-├── static/
-│   ├── css/
-│   │   └── style.css       # Main stylesheet
-│   ├── js/
-│   │   └── main.js         # JavaScript interactions
-│   └── images/
-│       └── profile.jpeg    # Profile photo
-└── templates/
-├── base.html           # Base template with navbar and footer
-├── index.html          # Homepage
-├── about.html          # About page
-├── services.html       # Services page
-├── portfolio.html      # Portfolio page
-├── contact.html        # Contact page
-├── privacy.html        # Privacy policy page
-├── 404.html            # 404 error page
-└── 500.html            # 500 error page
 
-## Local Development
+```
+bendora-website/
+│
+├── 📄 app.py                    # Application entry point, routes & error handlers
+├── 📄 requirements.txt          # Python package dependencies
+├── 📄 Procfile                  # Render/Gunicorn deployment configuration
+├── 📄 .env                      # Local environment variables (never committed)
+├── 📄 .gitignore                # Files and folders excluded from version control
+├── 📄 README.md                 # Project documentation
+│
+├── 📁 static/                   # All static assets served directly by Flask
+│   ├── 📁 css/
+│   │   └── 📄 style.css         # Global stylesheet — variables, layout, components
+│   ├── 📁 js/
+│   │   └── 📄 main.js           # Scroll animations, filters, navbar, form validation
+│   └── 📁 images/
+│       └── 📄 profile.jpeg      # Developer profile photo
+│
+└── 📁 templates/                # Jinja2 HTML templates rendered by Flask
+    ├── 📄 base.html             # Master layout — navbar, footer, meta tags
+    ├── 📄 index.html            # Homepage — hero, services, projects, stats
+    ├── 📄 about.html            # About — story, skills, timeline, interests
+    ├── 📄 services.html         # Services — detailed breakdown of all offerings
+    ├── 📄 portfolio.html        # Portfolio — filterable project showcase
+    ├── 📄 contact.html          # Contact — Formspree form and contact details
+    ├── 📄 privacy.html          # Privacy Policy — legal data usage information
+    ├── 📄 404.html              # 404 error — page not found handler
+    └── 📄 500.html              # 500 error — internal server error handler
+```## Local Development
 
 **1. Clone the repository**
 ```bash
