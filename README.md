@@ -55,6 +55,8 @@ bendora-website/
     ├── 📄 privacy.html          # Privacy Policy — legal data usage information
     ├── 📄 404.html              # 404 error — page not found handler
     └── 📄 500.html              # 500 error — internal server error handler
+
+
 ```## Local Development
 
 **1. Clone the repository**
