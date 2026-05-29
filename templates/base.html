@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Exo+2:wght@300;700;900&family=Rajdhani:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -38,9 +38,34 @@
     <!-- ── Navbar ──────────────────────────────────────────────────── -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="container nav-inner">
-        <a href="{{ url_for('index') }}" class="nav-logo" aria-label="Bendora Technology Home">
-          <div class="logo-mark" aria-hidden="true">B</div>
-          <span>Bendora <span class="gradient-text">Technology</span></span>
+
+        <a href="{{ url_for('index') }}" class="nav-logo" aria-label="Bendora Technology Home" style="gap:12px;text-decoration:none;">
+          <!-- SVG Icon -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(0,200,255,0.4));">
+            <defs>
+              <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00c8ff"/>
+                <stop offset="100%" stop-color="#0057ff"/>
+              </linearGradient>
+            </defs>
+            <polygon points="50,4 93,27.5 93,72.5 50,96 7,72.5 7,27.5"
+                     fill="none" stroke="url(#g5)" stroke-width="3" opacity="0.5"/>
+            <rect x="32" y="28" width="8" height="44" rx="2" fill="url(#g5)"/>
+            <path d="M 40 28 Q 60 28 62 36 Q 64 44 40 46 Z" fill="url(#g5)"/>
+            <path d="M 40 46 Q 64 48 66 57 Q 68 67 40 72 Z" fill="#0057ff"/>
+            <circle cx="70" cy="24" r="4" fill="#f0a500"/>
+            <line x1="63" y1="28" x2="70" y2="28" stroke="#f0a500" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="28" cy="82" r="2.5" fill="#00c8ff" opacity="0.6"/>
+            <circle cx="50" cy="88" r="2" fill="#0057ff" opacity="0.5"/>
+            <circle cx="72" cy="82" r="2.5" fill="#00c8ff" opacity="0.6"/>
+            <line x1="28" y1="82" x2="50" y2="88" stroke="#00c8ff" stroke-width="1" opacity="0.3"/>
+            <line x1="50" y1="88" x2="72" y2="82" stroke="#00c8ff" stroke-width="1" opacity="0.3"/>
+          </svg>
+          <!-- Text -->
+          <div style="display:flex;flex-direction:column;gap:1px;line-height:1;">
+            <span style="font-family:'Exo 2',sans-serif;font-weight:900;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;background:linear-gradient(110deg,#e8f4ff 0%,#00c8ff 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Bendora</span>
+            <span style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.6rem;letter-spacing:0.38em;color:rgba(0,200,255,0.6);text-transform:uppercase;">Technology</span>
+          </div>
         </a>
 
         <ul class="nav-links" role="list">
@@ -78,19 +103,43 @@
         <div class="footer-inner">
           <!-- Brand -->
           <div class="footer-brand">
-            <a href="{{ url_for('index') }}" class="nav-logo">
-              <div class="logo-mark">B</div>
-              <span>Bendora <span class="gradient-text">Technology</span></span>
+            <a href="{{ url_for('index') }}" class="nav-logo" style="gap:12px;text-decoration:none;">
+              <!-- SVG Icon -->
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(0,200,255,0.4));">
+                <defs>
+                  <linearGradient id="g5f" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00c8ff"/>
+                    <stop offset="100%" stop-color="#0057ff"/>
+                  </linearGradient>
+                </defs>
+                <polygon points="50,4 93,27.5 93,72.5 50,96 7,72.5 7,27.5"
+                         fill="none" stroke="url(#g5f)" stroke-width="3" opacity="0.5"/>
+                <rect x="32" y="28" width="8" height="44" rx="2" fill="url(#g5f)"/>
+                <path d="M 40 28 Q 60 28 62 36 Q 64 44 40 46 Z" fill="url(#g5f)"/>
+                <path d="M 40 46 Q 64 48 66 57 Q 68 67 40 72 Z" fill="#0057ff"/>
+                <circle cx="70" cy="24" r="4" fill="#f0a500"/>
+                <line x1="63" y1="28" x2="70" y2="28" stroke="#f0a500" stroke-width="1.5" opacity="0.6"/>
+                <circle cx="28" cy="82" r="2.5" fill="#00c8ff" opacity="0.6"/>
+                <circle cx="50" cy="88" r="2" fill="#0057ff" opacity="0.5"/>
+                <circle cx="72" cy="82" r="2.5" fill="#00c8ff" opacity="0.6"/>
+                <line x1="28" y1="82" x2="50" y2="88" stroke="#00c8ff" stroke-width="1" opacity="0.3"/>
+                <line x1="50" y1="88" x2="72" y2="82" stroke="#00c8ff" stroke-width="1" opacity="0.3"/>
+              </svg>
+              <!-- Text -->
+              <div style="display:flex;flex-direction:column;gap:1px;line-height:1;">
+                <span style="font-family:'Exo 2',sans-serif;font-weight:900;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;background:linear-gradient(110deg,#e8f4ff 0%,#00c8ff 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Bendora</span>
+                <span style="font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.6rem;letter-spacing:0.38em;color:rgba(0,200,255,0.6);text-transform:uppercase;">Technology</span>
+              </div>
             </a>
             <p>Building digital excellence through innovative software solutions and modern web experiences.</p>
             <div class="social-links" aria-label="Social media links">
-              <a href="https://www.linkedin.com/in/princeton-r-zahnmie-601a8a211"  class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/princeton-r-zahnmie-601a8a211" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
-              <a href="https://github.com/raccazahn"    class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+              <a href="https://github.com/raccazahn" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="https://twitter.com"   class="social-link" target="_blank" rel="noopener" aria-label="Twitter / X">
+              <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener" aria-label="Twitter / X">
                 <i class="fa-brands fa-x-twitter"></i>
               </a>
               <a href="mailto:bendoratechnology@gmail.com" class="social-link" aria-label="Email">
